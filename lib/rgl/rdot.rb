@@ -137,7 +137,7 @@ module DOT
     
     # node element
     class DOTNode < DOTElement
-        @ports
+        attr_reader :ports
 
         def initialize( params = {}, option_list = NODE_OPTS )
             super( params, option_list )
@@ -186,8 +186,8 @@ module DOT
     # subgraph element is the same to graph, but has another header in dot
     # notation
     class DOTSubgraph < DOTElement
-        @nodes
-        @dot_string
+        attr_reader :nodes
+        attr_reader :dot_string
 
         def initialize( params = {}, option_list = GRAPH_OPTS )
             super( params, option_list )
@@ -260,5 +260,7 @@ module DOT
 	end
 end
 
-
-
+# Tell emacs that we are using 4 space tabs..
+# Local Variables:
+# tab-width: 4
+# End:

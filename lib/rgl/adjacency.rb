@@ -35,6 +35,19 @@ module RGL
 	  @vertice_dict = Hash.new
 	end
 
+    # Create a random directed adjacency graph with n vertices and
+    # probability p of any two vertices being linked.
+    def DirectedAdjacencyGraph.random( n = 30, p = 0.02)
+      result = DirectedAdjacencyGraph.new
+      (0...n).each do |i|
+        result.add_vertex(i)
+        (0...n).each do |j|
+          result.add_edge( i, j) if rand < p
+        end
+      end
+      result
+    end
+
 	# Iterator for the keys of the vertice list hash.
 	def each_vertex(&b)
 	  @vertice_dict.each_key(&b)
@@ -149,3 +162,8 @@ module RGL
 	end
   end
 end
+
+# Tell emacs that we are using 4 space tabs..
+# Local Variables:
+# tab-width: 4
+# End:

@@ -123,3 +123,8 @@ module RGL
 	end
   end
 end
+
+# Tell emacs that we are using 4 space tabs..
+# Local Variables:
+# tab-width: 4
+# End:

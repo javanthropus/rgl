@@ -146,7 +146,7 @@ module RGL
 	include Edge
 
 	# The each_vertex iterator defines the set of vertices. This method must be 
-	# defined be concrete graph classes. It defines the BGL VertexListGraph
+	# defined by concrete graph classes. It defines the BGL VertexListGraph
 	# concept.
 	def each_vertex
 	  raise NotImplementedError
@@ -154,7 +154,7 @@ module RGL
 	end
 
 	# The each_adjacent iterator defines the out edges of vertex _v_. This
-	# method must be defined be concrete graph classes. Its defines the BGL
+	# method must be defined by concrete graph classes. Its defines the BGL
 	# IncidenceGraph concept.
 	def each_adjacent (v)
 	  raise NotImplementedError
@@ -164,7 +164,7 @@ module RGL
 	# The each_edge iterator should provide efficient access to all edges of the
 	# graph. Its defines the EdgeListGraph concept.
 	#
-	# This method must _not_ be defined be concrete graph classes, because it
+	# This method must _not_ be defined by concrete graph classes, because it
 	# can be implemented using each_vertex and each_adjacent. However for
 	# undirected graph the function is inefficient because we must may not yield
 	# (v,u) if we already visited edge (u,v).
